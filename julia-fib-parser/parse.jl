@@ -1,3 +1,5 @@
+using Pkg
+Pkg.add("Plots")
 using DelimitedFiles
 using Plots
 using Statistics
