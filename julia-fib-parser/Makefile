@@ -7,7 +7,7 @@
 # ####################################################################
 
 # define the C/C++ compiler to use
-CC = gcc-7
+CC = gcc
 
 # define compile-time flags
 CFLAGS = -O3 -fcilkplus -Wall
