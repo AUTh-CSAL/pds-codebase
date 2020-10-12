@@ -26,4 +26,6 @@ end
 # fix plot attributes & display
 plot!(title = "Time to compute fib(n)", xlabel = "n", ylabel = "time (sec)",
       xscale = :log, yscale = :log)
-display(plt);
+#display(plt);
+plotly()
+savefig("test.html");
