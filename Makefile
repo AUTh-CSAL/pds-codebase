@@ -17,9 +17,12 @@ hello_mpi:
 hello_cilk:
 	$(CILKCC) $(CFLAGS) -o hello_cilk hello_cilk.c -fcilkplus
 
+hello_coo2csc:
+	$(CC) $(CFLAGS) -o hello_coo2csc coo2csc/coo2csc.c 
+
 .PHONY: clean
 
-all: hello_openmp hello_mpi hello_threads hello_cilk
+all: hello_openmp hello_mpi hello_threads hello_cilk coo2csc
 
 test:
 	@printf "\n** Testing pthreads\n\n"
@@ -32,4 +35,4 @@ test:
 	mpirun ./hello_mpi
 
 clean:
-	rm -f hello_openmp hello_mpi hello_cilk hello_threads 
+	rm -f hello_openmp hello_mpi hello_cilk hello_threads coo2csc
