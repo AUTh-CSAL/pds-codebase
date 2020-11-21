@@ -1,7 +1,7 @@
 /* 
-*   Matrix Market I/O example program
+*   Matrix Market I/O example program. Added support for pattern matrices 21/11/20.
 *
-*   Read a real (non-complex) sparse matrix from a Matrix Market (v. 2.0) file.
+*   Read a real (non-complex) or logical/binary sparse matrix from a Matrix Market (v. 2.0) file.
 *   and copies it to stdout.  This porgram does nothing useful, but
 *   illustrates common usage of the Matrix Matrix I/O routines.
 *   (See http://math.nist.gov/MatrixMarket for details.)
