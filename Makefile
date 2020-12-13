@@ -16,10 +16,12 @@ hello_mpi:
 
 hello_cilk:
 	$(CILKCC) $(CFLAGS) -o hello_cilk hello_cilk.c -fcilkplus
+hello_openblas:
+	$(CC) $(CFLAGS) -o hello_openblas hello_openblas.c -lopenblas -lpthread
 
 .PHONY: clean
 
-all: hello_openmp hello_mpi hello_threads hello_cilk 
+all: hello_openmp hello_mpi hello_threads hello_cilk hello_openblas
 
 test:
 	@printf "\n** Testing pthreads\n\n"
@@ -28,8 +30,10 @@ test:
 	./hello_openmp
 	@printf "\n** Testing Cilk\n\n"
 	./hello_cilk
+	 @printf "\n** Testing OpenBLAS\n\n"
+	./hello_openblas
 	@printf "\n\n** Testing MPI\n\n"
 	mpirun ./hello_mpi
 
 clean:
-	rm -f hello_openmp hello_mpi hello_cilk hello_threads 
+	rm -f hello_openmp hello_mpi hello_cilk hello_threads hello_openblas
