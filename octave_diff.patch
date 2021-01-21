@@ -1,0 +1,30 @@
+diff --git a/matlab/pipeline_non_local_means.m b/matlab/pipeline_non_local_means.m
+index b2221a1..056a4c5 100644
+--- a/matlab/pipeline_non_local_means.m
++++ b/matlab/pipeline_non_local_means.m
+@@ -33,6 +33,7 @@
+   
+   %% USEFUL FUNCTIONS
+ 
++  pkg load image statistics
+   % image normalizer
+   normImg = @(I) (I - min(I(:))) ./ max(I(:) - min(I(:)));
+   
+@@ -43,8 +44,7 @@
+   %% INPUT DATA
+   
+   fprintf('...loading input data...\n')
+-  
+-  ioImg = matfile( pathImg );
++  ioImg = load(pathImg);
+   I     = ioImg.(strImgVar);
+   
+   %% PREPROCESS
+@@ -80,6 +80,7 @@
+   imagesc(If-J); axis image;
+   colormap gray;
+   
++  pause
+   %% (END)
+ 
+   fprintf('...end %s...\n',mfilename);
