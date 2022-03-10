@@ -15,7 +15,7 @@ hello_mpi:
 	$(MPICC) $(CFLAGS) -o hello_mpi hello_mpi.c
 
 hello_cilk:
-	$(CILKCC) $(CFLAGS) -o hello_cilk hello_cilk.c -fcilkplus
+	$(CILKCC) $(CFLAGS) -o hello_cilk hello_cilk.c -fopencilk
 hello_openblas:
 	$(CC) $(CFLAGS) -o hello_openblas hello_openblas.c -lopenblas -lpthread
 
